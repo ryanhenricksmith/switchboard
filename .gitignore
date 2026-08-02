@@ -1,0 +1,26 @@
+# Dependencies and build output
+node_modules/
+dist/
+coverage/
+*.tgz
+
+# Logs and local environment
+*.log
+.env
+.env.*
+!.env.example
+
+# Local agent instructions
+AGENTS.md
+CLAUDE.md
+
+# Editor and operating-system files
+.DS_Store
+.idea/
+.vscode/
+*.swp
+*~
+
+# Local tool state
+.codex/
+.claude/settings.local.json

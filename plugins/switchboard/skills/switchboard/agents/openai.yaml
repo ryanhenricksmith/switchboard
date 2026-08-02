@@ -1,0 +1,4 @@
+interface:
+  display_name: "Switchboard"
+  short_description: "Switch between Claude and Codex conversations"
+  default_prompt: "Use $switchboard to tell me how to launch the interactive conversation picker."

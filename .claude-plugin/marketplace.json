@@ -1,0 +1,15 @@
+{
+  "name": "switchboard",
+  "owner": {
+    "name": "Switchboard contributors"
+  },
+  "description": "A local-first conversation switchboard for Claude Code and Codex.",
+  "plugins": [
+    {
+      "name": "switchboard",
+      "source": "./plugins/switchboard",
+      "description": "Browse Claude Code and Codex conversations from one local session index.",
+      "version": "0.2.1"
+    }
+  ]
+}

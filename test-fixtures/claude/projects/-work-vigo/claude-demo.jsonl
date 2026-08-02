@@ -1,0 +1,2 @@
+{"type":"user","sessionId":"claude-demo","timestamp":"2026-08-01T18:00:00Z","cwd":"/work/vigo","message":{"role":"user","content":"Fix checkout validation"}}
+{"type":"ai-title","sessionId":"claude-demo","aiTitle":"Fix checkout validation"}

@@ -1,0 +1,8 @@
+{
+  "name": "switchboard",
+  "version": "0.2.1",
+  "description": "Browse Claude Code and Codex conversations from one local session index.",
+  "author": {
+    "name": "Switchboard contributors"
+  }
+}

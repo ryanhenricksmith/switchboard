@@ -1,0 +1,60 @@
+{
+  "name": "switchboard-plugin",
+  "version": "0.2.1",
+  "description": "Browse, resume, and hand off Claude Code and Codex conversations from one local picker.",
+  "type": "module",
+  "bin": {
+    "switchboard": "./dist/cli.js"
+  },
+  "files": [
+    "dist",
+    "!dist/**/*.test.*",
+    "plugins",
+    ".agents",
+    ".claude-plugin",
+    "docs",
+    "README.md",
+    "CONTRIBUTING.md",
+    "SECURITY.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "check": "tsc -p tsconfig.json --noEmit",
+    "test": "npm run build && node --test dist/*.test.js dist/adapters/*.test.js",
+    "start": "node dist/cli.js",
+    "dev": "node --experimental-strip-types src/cli.ts",
+    "prepare": "npm run build",
+    "prepublishOnly": "npm run check && npm test"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "keywords": [
+    "ai",
+    "claude-code",
+    "codex",
+    "coding-agent",
+    "handoff",
+    "sessions",
+    "resume",
+    "terminal"
+  ],
+  "author": "Ryan Henrick",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ryanhenricksmith/switchboard.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ryanhenricksmith/switchboard/issues"
+  },
+  "homepage": "https://github.com/ryanhenricksmith/switchboard#readme",
+  "publishConfig": {
+    "access": "public"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "typescript": "^5.9.0"
+  }
+}
