@@ -4,7 +4,7 @@
   "description": "Browse, resume, and hand off Claude Code and Codex conversations from one local picker.",
   "type": "module",
   "bin": {
-    "switchboard": "./dist/cli.js"
+    "switchboard": "dist/cli.js"
   },
   "files": [
     "dist",
