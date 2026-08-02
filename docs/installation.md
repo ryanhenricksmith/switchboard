@@ -57,15 +57,58 @@ You only need the provider you intend to open.
 
 The standalone CLI is the full Switchboard experience. The bundled plugin adds an in-agent skill for listing conversations and producing exact resume or handoff commands.
 
-Install the CLI first, then add this repository as a local marketplace while developing from a checkout.
+Install the CLI first, then install the public GitHub marketplace in either host.
 
-In Claude Code:
+### Claude Code
 
-```text
-/plugin marketplace add /absolute/path/to/switchboard
-/plugin install switchboard@switchboard
+From your shell:
+
+```bash
+claude plugin marketplace add ryanhenricksmith/switchboard
+claude plugin install switchboard@switchboard
 ```
 
-In Codex, add the checkout as a personal plugin marketplace and install **Switchboard** from the plugin browser.
+The equivalent commands inside Claude Code are:
+
+```text
+/plugin marketplace add ryanhenricksmith/switchboard
+/plugin install switchboard@switchboard
+/reload-plugins
+```
+
+Start a new session, then invoke `/switchboard:switchboard` or ask Claude to use Switchboard.
+
+### Codex
+
+From your shell:
+
+```bash
+codex plugin marketplace add ryanhenricksmith/switchboard
+codex plugin add switchboard@switchboard
+```
+
+Start a new Codex session, then invoke `$switchboard`, ask Codex to use Switchboard, or use `/plugins` to inspect the installation.
+
+### Update or remove
+
+Refresh the Git marketplace before updating an installed plugin:
+
+```bash
+claude plugin marketplace update switchboard
+claude plugin update switchboard@switchboard
+
+codex plugin marketplace upgrade switchboard
+```
+
+Remove the plugin while leaving the standalone CLI installed:
+
+```bash
+claude plugin uninstall switchboard@switchboard
+codex plugin remove switchboard@switchboard
+```
+
+### Local plugin development
+
+From a repository checkout, replace `ryanhenricksmith/switchboard` in the marketplace-add commands with the absolute checkout path.
 
 The plugin cannot take over the terminal occupied by an active agent. To use the interactive picker, exit the agent and run `switchboard` in the shell.

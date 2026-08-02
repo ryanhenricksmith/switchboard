@@ -78,11 +78,29 @@ Switchboard is designed to run in your terminal, one level above either agent. A
 - [How discovery, resume, and handoff work](docs/how-it-works.md)
 - [Troubleshooting](docs/troubleshooting.md)
 
-## Plugins
+## Agent plugins (optional)
 
-This repository also contains a shared Agent Skill and plugin manifests for Claude Code and Codex. They provide lightweight in-agent lookup and exact resume commands; the full interactive experience is still the standalone `switchboard` command.
+The npm command above installs the complete picker. You can additionally install the bundled skill in Claude Code and Codex for lightweight in-agent lookup and exact resume commands.
 
-See [Plugin setup](docs/installation.md#optional-agent-plugin) for local installation.
+Claude Code:
+
+```bash
+claude plugin marketplace add ryanhenricksmith/switchboard
+claude plugin install switchboard@switchboard
+```
+
+Codex:
+
+```bash
+codex plugin marketplace add ryanhenricksmith/switchboard
+codex plugin add switchboard@switchboard
+```
+
+Start a new agent session after installation. In Claude, invoke `/switchboard:switchboard`; in Codex, invoke `$switchboard` or ask it to use Switchboard.
+
+The skill can search/list conversations and produce exact commands, but it cannot replace the terminal UI already occupied by an active agent. For the full picker, exit Claude or Codex and run `switchboard`.
+
+See [Plugin setup](docs/installation.md#optional-agent-plugin) for updates, removal, and local-development installation.
 
 ## Privacy
 
@@ -97,7 +115,7 @@ Transcript files are never modified or uploaded. Native commands are launched wi
 
 ## Status
 
-Switchboard is early open-source software. The current focus is a small, reliable local picker. Planned work includes a portable handoff snapshot, a diagnostics command, and optional webhook notifications. Cloud sync or team sharing, if added later, will be opt-in and separate from the local-first core.
+Switchboard is early open-source software. The current focus is a small, reliable local picker. Planned work includes using Codex's official Claude-session importer for a native Claude → Codex path, a portable handoff snapshot for the reverse path, a diagnostics command, and optional webhook notifications. Cloud sync or team sharing, if added later, will be opt-in and separate from the local-first core.
 
 Issues and ideas are welcome. See [Contributing](CONTRIBUTING.md) and [Security](SECURITY.md).
 

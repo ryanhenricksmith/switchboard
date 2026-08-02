@@ -37,6 +37,12 @@ When you select the other provider, Switchboard starts a new destination convers
 
 The destination agent reads the history locally and works in the existing project. The source transcript remains unchanged. Context reuse, billing, and prompt caching are controlled by the destination provider; Switchboard cannot reliably label a cross-provider session as "cached."
 
+### Native import status
+
+Version 0.2.1 uses the read-only handoff above in both directions. Current Codex releases also expose an official Claude Code session importer, so a future Switchboard release can convert a selected Claude conversation into a native Codex session and resume the imported ID. This is not implemented in 0.2.1 yet.
+
+Claude Code currently exposes native resume and fork operations for Claude sessions but no supported external-session importer. The safe Codex → Claude path is therefore a new native Claude session seeded with a provider-neutral handoff, rather than writing private Claude JSONL directly.
+
 ## Project directories
 
 Switchboard launches the provider from the saved project directory when it still exists. If the directory has moved or been deleted, it falls back to the directory where `switchboard` was run; native resume behavior then depends on the provider.

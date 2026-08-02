@@ -69,3 +69,5 @@ The terminal picker must run outside Claude Code or Codex because the active age
 3. Choose the conversation and destination provider.
 
 The bundled skill is useful for a quick in-chat list or for producing an exact command, but it does not embed the full-screen picker inside `/resume`.
+
+After installing the optional plugin, invoke `/switchboard:switchboard` in Claude Code or `$switchboard` in Codex. The skill can run non-interactive listings inside the current agent; opening the selected provider still requires leaving the active full-screen session and running the printed command in your shell.
